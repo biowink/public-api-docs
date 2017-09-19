@@ -10,7 +10,7 @@
       * `client_id`: the oauth2 app key
       * `scope`: comma seperated list of scopes to be authorized
       * `redirect_uri`: callback url to redirect to at the end of the UI flow (validation not done yet)
-      * `state`: security text to prevent --->LOOKUP<--- attack
+      * `state`: security text to prevent an XSRF attack
     * On a successful authorization, the callback url recieves
       * `code`: a unique one-time code, that can be exchanged for an access_token & a refresh-token
       * `state`: same value as the state param sent in the authorization flow
