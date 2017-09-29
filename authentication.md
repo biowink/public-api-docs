@@ -37,3 +37,4 @@
     * On a successful token refresh, the api returns a json object with the following properties
       * `access_token`: a Bearer token that can be used to talk to the api
       * `expires_in`: number of seconds for which the token is valid (7 days for now)
+  * To validate that the token works, you can call make a `GET` request to `https://api.helloclue.com/users/info` with a `Authorization: Bearer [YOUR ACCESS TOKEN]` header 
