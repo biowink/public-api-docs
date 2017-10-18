@@ -21,7 +21,7 @@ To get the user cycles
           "end": "2017-11-01",
           "length": 6,
           "body": {
-            "ovulation_date": "2017-10-31",
+            "ovulation_date": "2017-10-31"
           }
         },
         {
