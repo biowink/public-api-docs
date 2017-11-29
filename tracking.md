@@ -13,17 +13,19 @@ To send tracking data to clue
 {
   "change_sets": {
     "measurements": [
-      {"date":"2017-1-1", "type":"happy"}
+      {"date":"2017-1-1", "type":"happy", "captured_at":"2017-01-01T00:00:00Z"}
     ]
   }
 }
 ```
 
+
 PS: you can send multiple data-points in the `measurements` array
 
 ### Schema for various measurement types
 
-PS: the `date` in payload is the date for which the measurement is tracked.
+The `date` in payload should be the date for which the measurement is tracked.
+The `captured_at` field should be the UTC JSON datetime for _when_ the measurement was tracked.
 
 * Bleeding
   * Heavy: `{"date":"2016-1-1", "type":"period", "body":"heavy"}`
