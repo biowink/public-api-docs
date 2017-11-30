@@ -1,4 +1,35 @@
-## Tracking
+## Tracking (read)
+
+### Request format
+To read tracking data
+* Send a `GET`
+* with an `Authorization` header
+* and content-type as `application/json`
+* to `https://api.helloclue.com/sync`
+
+Optionally add `?sync_checkpoint=<datetime>`, where `<datetime>` is an ISO/JSON formatted timestamp, 
+to only retrieve measurements stored after that point in time.
+
+### Schema for the response body
+```json
+{
+  "change_sets": {
+    "measurements": [
+      {"date":"2017-01-30", "type":"happy", "captured_at":"2017-01-30T09:49:00Z"}
+    ]
+  },
+  "sync_checkpoint": "2017-01-30T09:59:00Z"
+}
+```
+
+The `sync_checkpoint` refers to when the last returned measurement was inserted to the database.
+By storing this checkpoint on the client and transmitting with following GET requests, this can 
+be used to incrementally retrieve updated measurements.
+
+See the Schemas section below for examples of how different measurements are formatted.
+
+
+## Tracking (write)
 
 ### Request format
 To send tracking data to clue
@@ -19,10 +50,9 @@ To send tracking data to clue
 }
 ```
 
-
 PS: you can send multiple data-points in the `measurements` array
 
-### Schema for various measurement types
+## Schema for various measurement types
 
 Dates format is ISO 8601, always using hyphens to separate calendar dates and colons to separate time.
 `date` in payload should be the calendar date for which the measurement is tracked (YYYY-MM-DD).
