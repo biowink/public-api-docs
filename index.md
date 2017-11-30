@@ -1,3 +1,4 @@
 * [Authentication](authentication)
 * [Cycles](cycles)
-* [Tracking](tracking)
+* [Tracking (read)](tracking_get)
+* [Tracking (write)](tracking_post)
