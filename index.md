@@ -1,3 +1,3 @@
-* [Authentication](authentication)
-* [Cycles](cycles)
-* [Tracking](tracking)
+* [Authentication](authentication.md)
+* [Cycles](cycles.md)
+* [Tracking](tracking.md)
